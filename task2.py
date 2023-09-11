@@ -1,6 +1,8 @@
 # Напишите программу, которая принимает две строки вида “a/b” - дробь с числителем и знаменателем.
 # Программа должна возвращать сумму и произведение* дробей. Для проверки своего кода используйте модуль fractions.
 
+from fractions import Fraction
+
 num1 = input("Введите первую дробь: ").split('/')
 num2 = input("Введите вторую дробь: ").split('/')
 
@@ -23,3 +25,13 @@ print(f'{numerator1}/{denominator1} + {numerator2}/{denominator2} = {sum_result[
 
 multi_result = [multi_numerator, multi_denominator]
 print(f'{numerator1}/{denominator1} * {numerator2}/{denominator2} = {multi_result[0]}/{multi_result[1]}')
+
+fraction1 = Fraction(numerator1, denominator1)
+fraction2 = Fraction(numerator2, denominator2)
+
+sum_fraction = fraction1 + fraction2
+multi_fraction = fraction1 * fraction2
+
+print(f'С использованием fractions:')
+print(f'{fraction1} + {fraction2} = {sum_fraction}')
+print(f'{fraction1} * {fraction2} = {multi_fraction}')
